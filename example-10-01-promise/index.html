@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 16px;
+        }
+        body {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            border: 2px solid #000;
+            background-color: #fff;
+            color: #000;
+            font-size: 2rem;
+            outline: none;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="clickme">เย็นนี้ไปกินหมูกระทะกันเถอะ</button>
+
+    <script>
+        let friendship = 0;
+
+        function maybeGoGrillTogether() {
+            return new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    if (Math.random() < 0.5) {
+                        resolve()
+                    } else {
+                        reject()
+                    }
+                }, 1000)
+            })
+        }
+
+        $('#clickme').on('click', function() {
+            // คิดว่าน่าจะไปกินหมูกระทะนะ
+            const promise = maybeGoGrillTogether()
+            promise
+                .then(function() {
+                    // ถ้ามาจริง ก็จะสนิทกันมากขึ้นเนอะ
+                    friendship++
+                    alert(`เพื่อนกินหายาก ขอบคุณที่มา (friendship: ${friendship})`)
+                })
+                .catch(function() {
+                    // ถ้าไม่มา ก็อาจจะมีงอนกันบ้าง
+                    friendship--
+                    alert(`เซ็งๆๆๆๆ วันหลังไม่ต้องให้ความหวังเลย (friendship: ${friendship})`)
+                })
+        })
+    </script>
+</body>
+</html>
