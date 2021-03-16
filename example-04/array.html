@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="head" id="head">hello</h1>
+    <form action="" validate>
+        <div>
+            <input type="text">
+        </div>
+        <div>
+            <input type="color">
+        </div>
+        <div>
+            <input type="file">
+        </div>
+    </form>
+    <button id="clickme"></button>
+    <script>
+        let cars = ['BMW',     'MERCEDES-BENZ', 'TOYOTA', 'HONDA','ISUZU', 'MAZDA','MITSUBISHI','FORD']
+                // ['PROTON',  'MERCEDES-BENZ', 'TOYOTA', 'BMW',  'ISUZU', 'KIA',  'MITSUBISHI']
+        // Delete: BMW, HONDA, MAZDA, FORD
+        cars.splice(0, 1)
+        console.log(cars)
+        // Delete: HONDA, MAZDA, FORD
+        cars.splice(2, 1)
+        console.log(cars)
+        // Delete: MAZDA, FORD
+        cars.splice(3, 1)
+        console.log(cars)
+        // Delete: FORD
+        cars.pop()
+        console.log(cars)
+        // Delete: 
+
+        // Insert: PROTON, BMW, KIA
+        cars.unshift('PROTON')
+        console.log(cars)
+
+        // Insert: BMW, KIA
+        const car1 = cars.slice(0, 3)
+        const car2 = cars.slice(3)
+        console.log(car1)
+        console.log(car2)
+        car1.push('BMW')
+        cars = car1.concat(car2)
+        console.log(cars)
+
+        // Insert: KIA
+        const car3 = cars.slice(0, 5)
+        const car4 = cars.slice(5)
+        console.log(car3)
+        console.log(car4)
+        car3.push('KIA')
+        cars = car3.concat(car4)
+        console.log(cars)
+
+        // ["PROTON", "MERCEDES-BENZ", "TOYOTA", "BMW", "ISUZU", "KIA", "MITSUBISHI"]
+        // 'KIA|PROTON|MERCEDES-BENZ|BMW,ISUZU,MITSUBISHI,TOYOTA'
+    
+        const car5 = cars.slice(0, 4)
+        console.log(car5)
+        car5.splice(2, 1)
+        car5.unshift('KIA')
+        console.log(car5)
+        const first = car5.join('|')
+
+        const car6 = cars.slice(4)
+        console.log(car6)
+        car6.splice(1, 1)
+        car6.push('TOYOTA')
+        console.log(car6)
+        const second = car6.join(',')
+        console.log(first)
+        console.log(second)
+        console.log(first + ',' + second)
+        console.log(`${first},${second}`)
+
+    </script>
+</body>
+</html>

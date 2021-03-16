@@ -1,6 +1,0 @@
-const fruit1 = 'apple'
-const fruit2 = 'orange'
-const fruit3 = 'banana'
-const fruit4 = 'carot'
-const fruit5 = 'grape'
-const fruit6 = 'mango'

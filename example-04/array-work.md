@@ -11,7 +11,7 @@ MAZDA
 MITSUBISHI
 FORD
 
-
+ 
 # 2
 ทำให้ข้อมูลใน Array cars มีหน้าตาแบบนี้
 ```javascript
@@ -24,4 +24,5 @@ FORD
 ```javascript
 'KIA|PROTON|MERCEDES-BENZ|BMW,ISUZU,MITSUBISHI,TOYOTA'
 ```
+
 โดยการใช้ operation ใดๆ ก็ได้
