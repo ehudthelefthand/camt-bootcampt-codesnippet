@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function complete(count) {
+            if (count === 3) {
+                console.log('complete')
+            }
+        }
+        const now = new Date()
+        setTimeout(function() {
+            console.log('hello')
+            console.log('checkpoint 1 - ', new Date() - now)
+            let count = 0
+            setTimeout(function() {
+                console.log('world')
+                console.log('checkpoint 2 - ', new Date() - now)
+                count++
+                complete(count)
+            }, 5000)
+            setTimeout(function() {
+                console.log('foobar')
+                console.log('checkpoint 3 - ', new Date() - now)
+                count++
+                complete(count)
+            }, 4000)
+            setTimeout(function() {
+                console.log('wow')
+                console.log('checkpoint 4 - ', new Date() - now)
+                count++
+                complete(count)
+            }, 3000)
+            
+        }, 2000)
+    </script>
+</body>
+</html>
